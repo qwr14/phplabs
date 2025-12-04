@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 function createTableDimensions(): array
 {
-    $cols = 8;
-    $rows = 6;
+    $cols = 10;
+    $rows = 10;
     return ['cols' => $cols, 'rows' => $rows];
 }
 

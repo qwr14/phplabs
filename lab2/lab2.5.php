@@ -15,10 +15,10 @@ function swap(&$a, &$b): void
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Демонстрация функции swap</title>
+    <title>Применение функции swap</title>
 </head>
 <body>
-    <h1>Демонстрация функции swap</h1>
+    <h1>Применение функции swap</h1>
     <?php
     $a = 5;
     $b = 8;

@@ -1,31 +1,33 @@
 <?php
 declare(strict_types=1);
 
-function createMenuArray(): array
+function getTable(int $cols = 5, int $rows = 5, string $color = 'yellow'): int
 {
-    return [
-        ['link' => 'Домой', 'href' => 'index.php'],
-        ['link' => 'О нас', 'href' => 'about.php'],
-        ['link' => 'Контакты', 'href' => 'contact.php'],
-        ['link' => 'Таблица умножения', 'href' => 'table.php'],
-        ['link' => 'Калькулятор', 'href' => 'calc.php']
-    ];
-}
-
-function getMenu(array $menu, bool $vertical = true): string
-{
-    $cssClass = $vertical ? 'menu vertical' : 'menu horizontal';
-    $html = "<ul class=\"$cssClass\">";
+    static $count = 0;
+    $count++;
     
-    foreach ($menu as $menuItem) {
-        $html .= "<li><a href='{$menuItem['href']}'>{$menuItem['link']}</a></li>";
+    $html = "<h3>Таблица {$rows}×{$cols} (цвет: $color)</h3>";
+    $html .= '<table>';
+    
+  
+    for ($i = 1; $i <= $rows; $i++) {
+        $html .= '<tr>';
+        for ($j = 1; $j <= $cols; $j++) {
+            
+            if ($i === 1 || $j === 1) {
+                $html .= "<th style='background-color: $color;'>" . ($i * $j) . "</th>";
+            } else {
+                $html .= "<td>" . ($i * $j) . "</td>";
+            }
+        }
+        $html .= '</tr>';
     }
     
-    $html .= '</ul>';
-    return $html;
+    $html .= '</table>';
+    echo $html;
+    
+    return $count;
 }
-
-$leftMenu = createMenuArray();
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -33,29 +35,39 @@ $leftMenu = createMenuArray();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Меню</title>
+    <title>Таблица умножения</title>
     <style>
-       .menu {
-			list-style-type: none;
-			margin: 0;	
-			padding: 0;
-		}
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
 
-		.horizontal li {
-			display: inline;
-			padding: 5px
-		}
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        th {
+            font-weight: bold;
+        }
     </style>
 </head>
-<body>
-    <h1>Меню</h1>
+<body> 
+    <h1>Таблица умножения</h1>
     <?php
 
-    echo "<h2>Вертикальное меню</h2>";
-    echo getMenu($leftMenu);
+    $count1 = getTable();
 
-    echo "<h2>Горизонтальное меню</h2>";
-    echo getMenu($leftMenu, false);
+    $count2 = getTable(3);
+
+    $count3 = getTable(4, 6);
+
+    $count4 = getTable(7, 8, 'lightblue');
+ 
+    echo "<p><strong>Общее количество вызовов функции getTable(): $count4</strong></p>";
     ?> 
 </body>
 
