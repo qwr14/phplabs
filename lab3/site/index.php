@@ -1,8 +1,5 @@
-
 <?php
-    require_once 'inc/lib.inc.php';
-    require_once 'inc/data.inc.php';
-		/*
+/*
 		ЗАДАНИЕ 1
 		- В папке сайта создайте папку под названием inc
 		- В текстовом редакторе создайте новый файл
@@ -37,7 +34,11 @@
 		- В блоке <!--Нижняя часть страницы --> подключите файл bottom.inc.php из папки inc
 		- Сохраните файл index.php
 		- Посмотрите результат в браузере
-		*/ 
+		*/
+
+require_once 'inc/lib.inc.php';
+require_once 'inc/data.inc.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
