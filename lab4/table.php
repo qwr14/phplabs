@@ -2,7 +2,7 @@
 // Устанавливаем значения по умолчанию
 $default_cols = 5;
 $default_rows = 7;
-$default_color = '#00ff00';
+$default_color = '#00f2ffff';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $cols = abs((int) $_POST['cols']);
@@ -27,7 +27,7 @@ $color = ($color) ? $color : $default_color;
     <br>
     <label>Цвет: </label>
   <br>
-  <input name='color' type='color' value='<?= isset($_POST['color']) ? $_POST['color'] : '#00ff00' ?>' list="listColors">
+  <input name='color' type='color' value='<?= isset($_POST['color']) ? $_POST['color'] : '#00f2ffff' ?>' list="listColors">
   <datalist id="listColors">
     <option>#ff0000</option>
     <option>#00ff00</option>
