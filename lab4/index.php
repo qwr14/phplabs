@@ -72,7 +72,7 @@ switch ($id) {
 				include 'contact.php';
 				break;
 			case 'table':
-				include 'table.php';
+				include __DIR__ . '/table.php';
 				break;
 			case 'calc':
 				include 'calculator.php';
