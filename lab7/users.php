@@ -6,7 +6,7 @@ declare(strict_types=1);
  */
 spl_autoload_register(function ($className) {
     // Преобразуем пространство имен в путь к файлу
-    $filePath = str_replace('MyProject\\Classes\\', 'MyProject/Classes/', $className) . '.php';
+    $filePath = str_replace('src\\Classes\\', 'src/Classes/', $className) . '.php';
     
     if (file_exists($filePath)) {
         require_once $filePath;
@@ -15,8 +15,8 @@ spl_autoload_register(function ($className) {
     return false;
 });
 
-use MyProject\Classes\User;
-use MyProject\Classes\SuperUser;
+use src\Classes\User;
+use src\Classes\SuperUser;
 
 echo "<h1>Демонстрация работы с классами</h1>";
 

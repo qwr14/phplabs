@@ -1,5 +1,5 @@
 <?php
-namespace MyProject\Classes;
+namespace src\Classes;
 
 class SuperUser extends User {
     public $role;
