@@ -25,7 +25,7 @@ declare(strict_types=1);
 */
 
 // Подключаем конфигурацию базы данных
-require_once 'config-sample.php';
+require_once 'config.php';
 
 /**
  * Подключается к базе данных
